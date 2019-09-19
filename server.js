@@ -10,6 +10,10 @@ const app = express()
 app.use(cors())
 app.use(morgan('dev'))
 
+// Sequelize Models
+const db = require('./models')
+const Product = db.Product
+
 // Router Files
 
 
@@ -20,6 +24,18 @@ app.get('/api/test', (req, res, next) => {
   })
   // const error = new Error(“it died”)
   // next(error)
+})
+
+app.get('/api/products', (req, res, next) => {
+  Product.findAll()
+    .then(products => {
+      res.json({
+        products
+      })
+    })
+    .catch(error => {
+      next(error)
+    })
 })
 
 // Error Handling
