@@ -52,7 +52,7 @@ module.exports = {
       },{
         title: 'Door',
         description: `Protect yourself from them creepers, zombies, and spiders.`,
-        productImage: 'https://bit.ly/2km6226',
+        productImage: 'https://bit.ly/2kSRTK7',
         price: '12',
         likes: '21'
       },{
